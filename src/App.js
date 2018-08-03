@@ -4,7 +4,7 @@ import firebase from 'firebase';
 import './App.css';
 import View from "./View.js";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth.js";
-import Bulma from 'bulma';
+
 
 
 firebase.initializeApp({
@@ -76,17 +76,19 @@ getUser = () =>{
           <h1 className="App-title">GitHub Viewer</h1>
         </header>
         {this.state.isSignedIn ? (
-         <span className="App-intro">       
-        <p>
-        <img src={firebase.auth().currentUser.photoURL} alt="Not found"/>
+         <div className="container has-text-centered">       
+        
+        <figure className="image is-128x128">
+        <img className="is-rounded" src={firebase.auth().currentUser.photoURL} alt="Not found"/>
+        </figure>
         <h3>Welcome {firebase.auth().currentUser.displayName}!!</h3>
         <code>To get started, enter <b>a profile name</b> below and click the View button.</code>
-        </p>
-        <input type="text" placeholder="Type here..." ref="name"/>
-        <button onClick={this.getUser}>View</button>
-        <button onClick={() => firebase.auth().signOut()}>Sign Out</button>
+        
+        <input className="input is-focused input is-rounded" type="text" placeholder="Type here..." ref="name"/>
+        <button className="button is-link is-rounded" onClick={this.getUser}>View</button>
+        <button className="button is-danger is-rounded" onClick={() => firebase.auth().signOut()}>Sign Out</button>
         <View user={this.state.user} />
-        </span>
+        </div>
         ) : (
           <StyledFirebaseAuth
             uiConfig={this.uiConfig}

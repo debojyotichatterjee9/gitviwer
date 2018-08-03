@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Linkify from 'react-linkify';
-import Bulma from 'bulma';
+
 
 
 class View extends Component {
