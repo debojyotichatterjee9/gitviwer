@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Linkify from 'react-linkify';
 
+
 class View extends Component {
 
     
     render(){
+       
         const { user } = this.props;
    
         if(!this.props.user.id)
@@ -13,7 +15,7 @@ class View extends Component {
         return(
             <div>
                 <h3>User Details:</h3>
-                <image src="{user.avatar_url}" alt="Image not found"/>
+                <image src={user.avatar_url} alt="Image not found"/>
                 <h3>ID: {user.id}</h3>
                 <h3>Name: {user.name}</h3>
                 <h3>Location: {user.location}</h3>

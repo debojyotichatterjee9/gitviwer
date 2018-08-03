@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import firebase from 'firebase';
 import './App.css';
 import View from "./View.js";
+import Login from './Login.js';
 
 class App extends Component {
   
@@ -37,7 +39,13 @@ getUser = () =>{
   
     
 }
+authenticate= provider =>{
+       
+};
   render() {
+
+    return (<Login/>);
+
     return (
       <div className="App">
         <header className="App-header">
