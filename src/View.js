@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Linkify from 'react-linkify';
+import Bulma from 'bulma';
 
 
 class View extends Component {
@@ -15,7 +16,7 @@ class View extends Component {
         return(
             <div>
                 <h3>User Details:</h3>
-                <image src={user.avatar_url} alt="Image not found"/>
+                <image className="is-rounded" src={user.avatar_url} alt="Not found"/>
                 <h3>ID: {user.id}</h3>
                 <h3>Name: {user.name}</h3>
                 <h3>Location: {user.location}</h3>
@@ -25,7 +26,7 @@ class View extends Component {
                 <h3>Public Gists: {user.public_gists}</h3>
                 <h3>Followers: {user.followers}</h3>
                 <h3>Following: {user.following}</h3>
-                <h3>Hireable: JSON.stringify({user.hireable})</h3>
+                {/* <h3>Hireable: JSON.stringify({user.hireable})</h3> */}
                 <h3>Bio: {user.bio}</h3>
                 <Linkify properties={{target: '_blank', style: {color: 'red', fontWeight: 'bold'}}}>
                 See full profile at {user.url}.</Linkify>

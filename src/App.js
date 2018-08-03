@@ -4,7 +4,7 @@ import firebase from 'firebase';
 import './App.css';
 import View from "./View.js";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth.js";
-
+import Bulma from 'bulma';
 
 
 firebase.initializeApp({
@@ -34,6 +34,7 @@ componentDidMount = () =>{
   
   firebase.auth().onAuthStateChanged(user => {
     this.setState({isSignedIn: !!user })
+    console.log("user", user);
   })
 }
 
@@ -77,11 +78,13 @@ getUser = () =>{
         {this.state.isSignedIn ? (
          <span className="App-intro">       
         <p>
+        <img src={firebase.auth().currentUser.photoURL} alt="Not found"/>
+        <h3>Welcome {firebase.auth().currentUser.displayName}!!</h3>
         <code>To get started, enter <b>a profile name</b> below and click the View button.</code>
         </p>
         <input type="text" placeholder="Type here..." ref="name"/>
         <button onClick={this.getUser}>View</button>
-        <button onClick={() => firebase().auth.signOut()}>Sign Out</button>
+        <button onClick={() => firebase.auth().signOut()}>Sign Out</button>
         <View user={this.state.user} />
         </span>
         ) : (
