@@ -11,23 +11,23 @@ class View extends Component {
         const { user } = this.props;
    
         if(!this.props.user.id)
-        { return <h3>Please enter a correct username to search...</h3>; }
+        { return <h3 className="font-weight-light">Please enter a correct username to search...</h3>; }
           
         return(
             <div>
                 <h3>User Details:</h3>
                 <image src={user.avatar_url} alt="Not found"/>
-                <h3>ID: {user.id}</h3>
-                <h3>Name: {user.name}</h3>
-                <h3>Location: {user.location}</h3>
-                <h3>Comapany: {user.company}</h3>
-                <h3>Email: {user.email}</h3>
-                <h3>Public Repos: {user.public_repos}</h3>
-                <h3>Public Gists: {user.public_gists}</h3>
-                <h3>Followers: {user.followers}</h3>
-                <h3>Following: {user.following}</h3>
+                <h4 className="font-weight-light">ID: {user.id}</h4>
+                <h4 className="font-weight-light">Name: {user.name}</h4>
+                <h4 className="font-weight-light">Location: {user.location}</h4>
+                <h4 className="font-weight-light">Comapany: {user.company}</h4>
+                <h4 className="font-weight-light">Email: {user.email}</h4>
+                <h4 className="font-weight-light">Public Repos: {user.public_repos}</h4>
+                <h4 className="font-weight-light">Public Gists: {user.public_gists}</h4>
+                <h4 className="font-weight-light">Followers: {user.followers}</h4>
+                <h4 className="font-weight-light">Following: {user.following}</h4>
                 {/* <h3>Hireable: JSON.stringify({user.hireable})</h3> */}
-                <h3>Bio: {user.bio}</h3>
+                <h4 className="font-weight-light">Bio: {user.bio}</h4>
                 <Linkify properties={{target: '_blank', style: {color: 'red', fontWeight: 'bold'}}}>
                 See full profile at {user.url}.</Linkify>
                                
