@@ -76,17 +76,17 @@ getUser = () =>{
           <h1 className="App-title">GitHub Viewer</h1>
         </header>
         {this.state.isSignedIn ? (
-         <div className="container has-text-centered">       
+         <div>       
         
-        <figure className="image is-128x128">
-        <img className="is-rounded" src={firebase.auth().currentUser.photoURL} alt="Not found"/>
+        <figure>
+        <img src={firebase.auth().currentUser.photoURL} alt="Not found"/>
         </figure>
         <h3>Welcome {firebase.auth().currentUser.displayName}!!</h3>
-        <code>To get started, enter <b>a profile name</b> below and click the View button.</code>
+        <p><code>To get started, enter <b>a profile name</b> below and click the View button.</code></p>
         
-        <input className="input is-focused input is-rounded" type="text" placeholder="Type here..." ref="name"/>
-        <button className="button is-link is-rounded" onClick={this.getUser}>View</button>
-        <button className="button is-danger is-rounded" onClick={() => firebase.auth().signOut()}>Sign Out</button>
+        <input type="text" placeholder="Type here..." ref="name"/>
+        <button onClick={this.getUser}>View</button>
+        <button onClick={() => firebase.auth().signOut()}>Sign Out</button>
         <View user={this.state.user} />
         </div>
         ) : (

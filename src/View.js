@@ -16,7 +16,7 @@ class View extends Component {
         return(
             <div>
                 <h3>User Details:</h3>
-                <image className="is-rounded" src={user.avatar_url} alt="Not found"/>
+                <image src={user.avatar_url} alt="Not found"/>
                 <h3>ID: {user.id}</h3>
                 <h3>Name: {user.name}</h3>
                 <h3>Location: {user.location}</h3>
