@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
-// import defaultUserImage from '../../assets/images/defaultUserImage';
+import defaultUserImage from '../../assets/images/defaultUser.png';
 import View from '../../components/View/View'
+import './style.css'
 
 export default class Dashboard extends Component {
     state = {
@@ -40,7 +41,7 @@ export default class Dashboard extends Component {
             <div className="container">
                 <div className="wrapper">
                     <figure>
-                        <img className="img-thumbnail m-2" src={firebase.auth().currentUser.photoURL ? firebase.auth().currentUser.photoURL : '../../assets/images/defaultUserImage'} alt="No Image" />
+                        <img className="userThumbnail img-thumbnail rounded-circle img-fluid. max-width: 100%" src={firebase.auth().currentUser.photoURL ? firebase.auth().currentUser.photoURL : defaultUserImage} alt="No Image" />
                     </figure>
                     <h3 className="font-weight-light">Welcome {firebase.auth().currentUser.displayName}!!</h3>
                     <p><code>To get started, enter <b>a profile name</b> below and click the View button.</code></p>
