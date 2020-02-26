@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import firebase from 'firebase';
+
 import './App.css';
 import View from "./View.js";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth.js";
+import Auth from './components/Auth/Auth';
+import Dashboard from './components/Dashboard/Dashboard'
+
 
 
 
@@ -18,17 +21,7 @@ state ={
   isSignedIn: false,
   user: {}
 }
-uiConfig = {
-  signInFlow: "popup",
-  signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    firebase.auth.EmailAuthProvider.PROVIDER_ID
-  ],
-  callbacks: {
-    signInSuccess: () => false
-  }
-}
+
 
 componentDidMount = () =>{
   
@@ -75,29 +68,7 @@ getUser = () =>{
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">GitHub Viewer</h1>
         </header>
-        {this.state.isSignedIn ? (
-        <div className="container">   
-        <div className="wrapper">    
-        <figure>
-        <img className="img-thumbnail m-2" src={firebase.auth().currentUser.photoURL} alt="Not found"/>
-        </figure>
-        <h3 className="font-weight-light">Welcome {firebase.auth().currentUser.displayName}!!</h3>
-        <p><code>To get started, enter <b>a profile name</b> below and click the View button.</code></p>
-        <input className="m-3" type="text" placeholder="Type here..." ref="name"/>
-        <div>
-        <button className="btn btn-success mr-2" onClick={this.getUser}>View</button>
-        <button className="btn btn-danger ml-2" onClick={() => firebase.auth().signOut()}>Sign Out</button>
-        </div>
-        <View user={this.state.user} />
-        </div>
-        </div>
-        ) : (
-          <StyledFirebaseAuth
-            uiConfig={this.uiConfig}
-            firebaseAuth={firebase.auth()}
-          />
-          // <div>Not Signed in</div>
-        )}
+        {this.state.isSignedIn ? (<Dashboard />) : (<Auth />)}
       </div>
     );
     
