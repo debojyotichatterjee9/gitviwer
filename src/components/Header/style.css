@@ -1,0 +1,42 @@
+.logo {
+  height: 50px;
+}
+.logoContainer {
+    transition: transform .2s;
+}
+.logoContainer img {
+    vertical-align: middle;
+}
+.logoContainer:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.menuContainer {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+.menuContainer p {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+.menuContainer p:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.textLogo {
+    height: 80px;
+  }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    height: 100px;
+    padding: 20px;
+    color: white;
+}
+
+.title {
+  font-size: 1.5em;
+}
