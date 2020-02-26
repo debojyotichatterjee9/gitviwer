@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import firebase from "firebase";
 import "./App.css";
-import View from "./View.js";
 import Auth from "./components/Auth/Auth";
 import Dashboard from "./components/Dashboard/Dashboard";
 
