@@ -5,18 +5,17 @@ import Linkify from 'react-linkify';
 
 class View extends Component {
 
-    
-    render(){
-       
+
+    render() {
+
         const { user } = this.props;
-   
-        if(!this.props.user.id)
-        { return <h3 className="font-weight-light">Please enter a correct username to search...</h3>; }
-          
-        return(
+
+        if (!this.props.user.id) { return <h3 className="font-weight-light">Please enter a correct username to search...</h3>; }
+
+        return (
             <div>
                 <h3>User Details:</h3>
-                <image src={user.avatar_url} alt="Not found"/>
+                <image src={user.avatar_url} alt="Not found" />
                 <h4 className="font-weight-light">ID: {user.id}</h4>
                 <h4 className="font-weight-light">Name: {user.name}</h4>
                 <h4 className="font-weight-light">Location: {user.location}</h4>
@@ -28,9 +27,9 @@ class View extends Component {
                 <h4 className="font-weight-light">Following: {user.following}</h4>
                 {/* <h3>Hireable: JSON.stringify({user.hireable})</h3> */}
                 <h4 className="font-weight-light">Bio: {user.bio}</h4>
-                <Linkify properties={{target: '_blank', style: {color: 'red', fontWeight: 'bold'}}}>
-                See full profile at {user.url}.</Linkify>
-                               
+                <Linkify properties={{ target: '_blank', style: { color: 'red', fontWeight: 'bold' } }}>
+                    See full profile at {user.url}.</Linkify>
+
             </div>
         )
     }
