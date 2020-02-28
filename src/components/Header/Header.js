@@ -14,9 +14,9 @@ export default class Header extends Component {
                 </div>
                 
                 <div className="menuContainer">
-                    <p>Home</p>
-                    <p>About</p>
-                    <p>Close</p>
+                    <p className="text-monospace">Home</p>
+                    <p className="text-monospace">About</p>
+                    <p className="text-monospace">Close</p>
                 </div>
             </header>
         )

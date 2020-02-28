@@ -43,13 +43,20 @@ export default class Dashboard extends Component {
                     <figure>
                         <img className="userThumbnail img-thumbnail rounded-circle img-fluid. max-width: 100%" src={firebase.auth().currentUser.photoURL ? firebase.auth().currentUser.photoURL : defaultUserImage} alt="No Image" />
                     </figure>
-                    <h3 className="welcomeText">Welcome {firebase.auth().currentUser.displayName}!!</h3>
-                    <p><code>To get started, enter <b>a profile name</b> below and click the View button.</code></p>
-                    <input className="m-3" type="text" placeholder="Type here..." ref="name" />
+                    <h3 className="font-weight-light glow">Welcome {firebase.auth().currentUser.displayName}!!</h3>
+                    {/* <p><code>To get started, enter <b>a profile name</b> below and click the View button.</code></p> */}
+                    {/* <input className="m-3" type="text" placeholder="Type here..." ref="name" />
                     <div>
                         <button className="btn btn-success mr-2" onClick={this.getUser}>View</button>
                         <button className="btn btn-danger ml-2" onClick={() => firebase.auth().signOut()}>Sign Out</button>
-                    </div>
+                    </div> */}
+                    <form>
+                        <div class="searchContainer">
+                            <input type="text" placeholder="Search..." />
+                            <div class="search"></div>
+                        </div>
+                    </form>
+
                     <View user={this.state.user} />
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Linkify from 'react-linkify';
+import './style.css'
 
 
 
@@ -10,7 +11,7 @@ class View extends Component {
 
         const { user } = this.props;
 
-        if (!this.props.user.id) { return <h3 className="font-weight-light">Please enter a correct username to search...</h3>; }
+        if (!this.props.user.id) { return <h3 className="infoText font-weight-light">To get started, please enter a correct username to search...</h3>; }
 
         return (
             <div>
