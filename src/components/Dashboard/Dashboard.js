@@ -34,8 +34,11 @@ export default class Dashboard extends Component {
                     }
                 })
             })
-
-
+    }
+    clearSearch = () => {
+        this.setState({
+            user: ''
+        })
     }
     render() {
         return (
@@ -58,7 +61,7 @@ export default class Dashboard extends Component {
                         </div>
                     </form>
 
-                    <View user={this.state.user} />
+                    <View user={this.state.user} clear={this.clearSearch} />
                 </div>
             </div>
         )
