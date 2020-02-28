@@ -6,10 +6,11 @@ import './style.css'
 
 export default class Dashboard extends Component {
     state = {
+        userInput: '',
         user: {}
     }
     getUser = () => {
-        const name = this.refs.name.value;
+        const name = this.state.userInput;
         //alert(name);
         fetch(`http://api.github.com/users/${name}`)
             .then(response => response.json())
@@ -50,10 +51,10 @@ export default class Dashboard extends Component {
                         <button className="btn btn-success mr-2" onClick={this.getUser}>View</button>
                         <button className="btn btn-danger ml-2" onClick={() => firebase.auth().signOut()}>Sign Out</button>
                     </div> */}
-                    <form>
-                        <div class="searchContainer">
-                            <input type="text" placeholder="Search..." />
-                            <div class="search"></div>
+                    <form onSubmit={(event) => {event.preventDefault(); this.getUser();}}>
+                        <div className="searchContainer">
+                            <input onChange={(event) => {this.setState({userInput: event.target.value})}} type="text" placeholder="Search..." />
+                            <div className="search"></div>
                         </div>
                     </form>
 
