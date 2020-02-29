@@ -1,7 +1,9 @@
 # Github Profile Viewer
 
-Foobar is a Python library for dealing with word pluralization.
+![](https://img.shields.io/github/issues/debojyotichatterjee9/gitviwer) ![](https://img.shields.io/github/license/debojyotichatterjee9/gitviwer)
 
+This is a simple React Application that fetches the Github profile details of a particular user.
+ 
 ## Installation
 
 The requires [Node.js](https://nodejs.org/) v12.16.1LTS+ to run.
